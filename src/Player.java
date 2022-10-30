@@ -14,18 +14,18 @@ public class Player{
         }
     }
 
-    public static void hp(int lv,int maxHp){
+    public void hp(int lv,int maxHp){
         int tlv = lv;
         if(lv==(tlv+1)){
             maxHp+=5;
         }
     }
 
-    public static void attack(){
+    public void attack(){
 
     }
 
-    public static void heal(int hp, boolean healOrb){
+    public void heal(int hp, boolean healOrb){
         if(healOrb){
             hp++;
         }
