@@ -22,6 +22,8 @@ public class Main extends JFrame implements KeyListener{
      */
     static boolean[] isKeyPressed={false,false,false,false,false};
 
+    static int score=0;
+
     public static void main(String[] args) {
         Main window = new Main("test");
         Timer timer=new Timer(10, new ActionListener(){
