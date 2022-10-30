@@ -2,10 +2,10 @@ public class Player{
     int hp = 10;
     int lv = 1;
     
-    public void lv(int lv,int score,boolean breakenemy){
-        if(breakenemy){
+    public void lv(int lv,int score,boolean breakEnemy){
+        if(breakEnemy){
             score+=10;
-            breakenemy=false;
+            breakEnemy=false;
         }
 
         int tscore = score;
@@ -14,10 +14,10 @@ public class Player{
         }
     }
 
-    public static void hp(int lv,int maxhp){
+    public static void hp(int lv,int maxHp){
         int tlv = lv;
         if(lv==(tlv+1)){
-            maxhp+=5;
+            maxHp+=5;
         }
     }
 
@@ -25,8 +25,8 @@ public class Player{
 
     }
 
-    public static void hell(int hp, boolean hellorb){
-        if(hellorb){
+    public static void heal(int hp, boolean healOrb){
+        if(healOrb){
             hp++;
         }
     }

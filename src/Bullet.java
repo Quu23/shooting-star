@@ -1,5 +1,5 @@
 public abstract class Bullet {
-    public static boolean CheckHit(){
+    public static boolean checkHit(){
     
     return true;
     }

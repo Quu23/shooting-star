@@ -1,7 +1,7 @@
 public class Enemy {
-    public static void broke(boolean CheckHit){
-        if(CheckHit){
-            
+    public static void broke(boolean checkHit){
+        if(checkHit){
+
         }
     }
 }
