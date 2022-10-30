@@ -7,13 +7,9 @@ public class Player{
         score+=10;
         breakEnemy=false;
 
-        int tLv = lv;
-
         if(score%100==0){
             lv++;
-            if((tLv+1)==lv){
-                maxHp+=5;
-            }
+            maxHp+=5;
         }
 
     }
