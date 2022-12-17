@@ -57,9 +57,11 @@ public class Main extends JFrame implements KeyListener{
     }
 
     private void gameLoop(){
+
         // ゲームループ。ゲームの内容はここに書いてね
         System.out.println("てすとだよ");
         System.out.println(Arrays.toString(isKeyPressed));
+        
     }
 
     private void draw(Graphics g) {
