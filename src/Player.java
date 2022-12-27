@@ -17,13 +17,13 @@ public class Player{
         if(Main.score%100==0){
             this.lv++;
             this.maxHp+=5;
-            //ここでhpを回復させる処理を行うかは要相談
+            //todo:ここでhpを回復させる処理を行うかは要相談
         }
 
     }
 
-    public void attack(){
-
+    public void attack(Enemy e){
+        e.hp--;//todo:ダメージ量は仮
     }
 
     //自分のhpを回復させるメゾット？
