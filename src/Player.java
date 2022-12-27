@@ -26,9 +26,10 @@ public class Player{
 
     }
 
-    public void healUp(int hp, boolean isGetHealOrb){
+    //自分のhpを回復させるメゾット？
+    public void heal(boolean isGetHealOrb){
         if(isGetHealOrb){
-            hp++;
+            this.hp++;
         }
     }
 }
