@@ -13,13 +13,11 @@ public class Player{
         this.y=y;
     }
     
-    public void lvUp(int lv,int score,boolean breakEnemy){
-        score+=10;
-        breakEnemy=false;
-
-        if(score%100==0){
-            lv++;
-            maxHp+=5;
+    public void levelUp(){
+        if(Main.score%100==0){
+            this.lv++;
+            this.maxHp+=5;
+            //ここでhpを回復させる処理を行うかは要相談
         }
 
     }
