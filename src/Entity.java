@@ -15,11 +15,11 @@ public abstract class Entity {
 
         double angle = Math.atan2(this.y-target.y, this.x-target.x);
 
-        double square_distance = 
-        (this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y)
-        -((this.width/Math.cos(angle))*(this.width/Math.cos(angle))+(target.width/Math.cos(angle))*(target.width/Math.cos(angle)));
+        double distance = 
+        Math.sqrt((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y))
+        -((this.width/Math.cos(angle))+(target.width/Math.cos(angle)));
 
-        if(square_distance<0){
+        if(distance<0){
             return true;
         }
         return false;
