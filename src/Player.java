@@ -1,4 +1,4 @@
-public class Player{
+public class Player extends Entity{
     int hp = 10;
     int lv = 1;
     int maxHp = 10;

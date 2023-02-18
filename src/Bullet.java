@@ -1,4 +1,4 @@
-public abstract class Bullet {
+public abstract class Bullet extends Entity{
 
     int x;
     int y;
