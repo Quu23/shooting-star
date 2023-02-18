@@ -1,9 +1,9 @@
 public class Enemy extends Entity{
     int hp;
-    public static void broke(boolean checkHit){
-        if(checkHit){
+    
 
-        }
+    Enemy(int x,int y,int width,int height){
+        super(x,y,width,height);
     }
 
 }

@@ -3,14 +3,9 @@ public class Player extends Entity{
     int lv = 1;
     int maxHp = 10;
 
-    //プレイヤーの座標
-    int x;
-    int y;
-
     //コンストラクタ
-    Player(int x,int y){
-        this.x=x;
-        this.y=y;
+    Player(int x,int y,int width,int height){
+        super(x,y,width,height);
     }
     
     public void levelUp(){

@@ -1,10 +1,7 @@
 public abstract class Bullet extends Entity{
+    
 
-    int x;
-    int y;
-    
-    public static boolean checkHit(){
-    
-    return true;
+    Bullet(int x,int y,int width,int height){
+        super(x,y,width,height);
     }
 }
