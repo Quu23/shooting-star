@@ -19,7 +19,7 @@ public abstract class Entity {
         Math.sqrt((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y))
         -((this.width/Math.cos(angle))+(target.width/Math.cos(angle)));
 
-        if(distance<0){
+        if(distance<5){
             return true;
         }
         return false;
