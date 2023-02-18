@@ -1,7 +1,7 @@
 public class Player extends Entity{
     int hp = 10;
     int lv = 1;
-    int maxHp = 10;
+    final int MAX_HP  = 10;
 
     //コンストラクタ
     Player(int x,int y,int width,int height){
@@ -11,7 +11,6 @@ public class Player extends Entity{
     public void levelUp(){
         if(Main.score%100==0){
             this.lv++;
-            this.maxHp+=5;
             //todo:ここでhpを回復させる処理を行うかは要相談
         }
 
