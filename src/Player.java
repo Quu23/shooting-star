@@ -36,4 +36,17 @@ public class Player extends Plane{
             this.hp++;
         }
     }
+
+    @Override
+    public void addBullet() {
+        //一直線のみ
+        this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90)));
+    }
+
+    @Override
+    public void moveBullet() {
+        for (Bullet bullet : bullets) {
+            bullet.y--;
+        }
+    }
 }
