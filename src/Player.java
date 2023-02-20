@@ -1,25 +1,18 @@
-import java.util.ArrayList;
-import java.util.List;
-
-public class Player extends Entity{
+public class Player extends Plane{
 
     final int MAX_HP  = 10;
-
-    List<Bullet> bullets=new ArrayList<Bullet>();
     
     int bulletNum;
     int hp;
     int lv;
-    int power;
     int exp;
 
     //コンストラクタ
     Player(int x,int y,int width,int height){
-        super(x,y,width,height);
+        super(x,y,width,height,1);
         this.bulletNum=1;
         this.hp = 10;
         this.lv = 1;
-        this.power=1;
         this.exp=0;
     }
     
