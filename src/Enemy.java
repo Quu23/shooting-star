@@ -1,9 +1,9 @@
-public class Enemy extends Entity{
+public abstract class Enemy extends Plane{
     int hp;
     
 
-    Enemy(int x,int y,int width,int height){
-        super(x,y,width,height);
+    Enemy(int x,int y,int width,int height,int power){
+        super(x,y,width,height,power);
     }
 
 }
