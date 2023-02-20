@@ -3,16 +3,24 @@ import java.util.List;
 
 public class Player extends Entity{
 
-    List<Bullet> bullets=new ArrayList<Bullet>();
-    int bulletNum=1;
-    int hp = 10;
-    int lv = 1;
-    int power=1;
     final int MAX_HP  = 10;
+
+    List<Bullet> bullets=new ArrayList<Bullet>();
+    
+    int bulletNum;
+    int hp;
+    int lv;
+    int power;
+    int exp;
 
     //コンストラクタ
     Player(int x,int y,int width,int height){
         super(x,y,width,height);
+        this.bulletNum=1;
+        this.hp = 10;
+        this.lv = 1;
+        this.power=1;
+        this.exp=0;
     }
     
     public void levelUp(){
