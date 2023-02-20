@@ -1,4 +1,4 @@
-public abstract class Bullet extends Entity{
+public class Bullet extends Entity{
     double angle;
 
     Bullet(int x,int y,int width,int height,int angle){
