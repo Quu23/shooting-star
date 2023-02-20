@@ -10,5 +10,8 @@ public abstract class Plane extends Entity{
         super(x, y, width, height);
         this.power=power;
     }
+
+    public abstract void addBullet();
+    public abstract void moveBullet();
     
 }
