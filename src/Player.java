@@ -1,6 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player extends Entity{
+
+    List<Bullet> bullets=new ArrayList<Bullet>();
+    int bulletNum=1;
     int hp = 10;
     int lv = 1;
+    int power=1;
     final int MAX_HP  = 10;
 
     //コンストラクタ
@@ -9,11 +16,13 @@ public class Player extends Entity{
     }
     
     public void levelUp(){
-        if(Main.score%100==0){
-            this.lv++;
-            //todo:ここでhpを回復させる処理を行うかは要相談
+        this.lv++;
+        if(this.lv%2==0){
+            this.power++;
         }
-
+        if(this.lv%3==0){
+            this.bulletNum+=2;
+        }
     }
 
     public void attack(Enemy e){
