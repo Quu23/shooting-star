@@ -7,11 +7,4 @@ public class StraightEnemy extends Enemy{
     public void addBullet() {
         this.bullets.add(new Bullet(this.x,this.y+5,3,3,Math.toRadians(270)));
     }
-
-    @Override
-    public void moveBullet() {
-        for (Bullet bullet : bullets) {
-            bullet.y++;
-        }
-    }
 }
