@@ -24,12 +24,15 @@ public class Main extends JFrame implements KeyListener{
      */
     static boolean[] isKeyPressed={false,false,false,false,false};
 
+    static Player player;
+
     static List<Enemy> enemys=new ArrayList<>();
 
     static int score=0;
 
     public static void main(String[] args) {
         Main window = new Main("test");
+        player=new Player(200, 600, 5, 5);
         Timer timer=new Timer(10, new ActionListener(){
 
             @Override
@@ -65,11 +68,12 @@ public class Main extends JFrame implements KeyListener{
         // ゲームループ。ゲームの内容はここに書いてね
         System.out.println("てすとだよ");
         System.out.println(Arrays.toString(isKeyPressed));
+        player.action();
     }
 
     private void draw(Graphics g) {
-        g.setColor(Color.RED);
-        g.fillRect(10, 10, 10, 10);
+        g.setColor(Color.BLUE);
+        g.fillRect(player.x-player.width, player.y-player.height, player.width*2, player.height*2);
     }
 
     @Override
