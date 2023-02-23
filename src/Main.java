@@ -33,6 +33,7 @@ public class Main extends JFrame implements KeyListener{
     public static void main(String[] args) {
         Main window = new Main("test");
         player=new Player(200, 600, 5, 5);
+        player.hp-=7;
         Timer timer=new Timer(10, new ActionListener(){
 
             @Override
@@ -74,8 +75,17 @@ public class Main extends JFrame implements KeyListener{
     }
 
     private void draw(Graphics g) {
+        g.setColor(Color.BLACK);
+        g.drawString("hp", 5, 640);
+        g.setColor(Color.GRAY);
+        g.fillRect(20, 630, 100, 10);
+        g.setColor(Color.RED);
+        g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
         g.setColor(Color.BLUE);
         g.fillRect(player.x-player.width, player.y-player.height, player.width*2, player.height*2);
+        for (Bullet bullet : player.bullets) {
+            g.fillOval(bullet.x-bullet.width, bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
+        }
     }
 
     @Override

@@ -23,6 +23,7 @@ public class Player extends Plane{
         if(Main.isKeyPressed[2]&&this.y>0)this.y--;
         if(Main.isKeyPressed[3]&&this.x<400)this.x++;
         if(Main.isKeyPressed[4]&&this.y<700)this.y++;
+        this.moveBullet();
     }
     
     public void levelUp(){
@@ -51,7 +52,7 @@ public class Player extends Plane{
     @Override
     public void moveBullet() {
         for (Bullet bullet : bullets) {
-            bullet.y--;
+            bullet.y-=5;
         }
     }
 }
