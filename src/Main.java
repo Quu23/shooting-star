@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -21,6 +23,8 @@ public class Main extends JFrame implements KeyListener{
      * <p>4 : down</p>
      */
     static boolean[] isKeyPressed={false,false,false,false,false};
+
+    static List<Enemy> enemys=new ArrayList<>();
 
     static int score=0;
 
@@ -61,7 +65,6 @@ public class Main extends JFrame implements KeyListener{
         // ゲームループ。ゲームの内容はここに書いてね
         System.out.println("てすとだよ");
         System.out.println(Arrays.toString(isKeyPressed));
-        
     }
 
     private void draw(Graphics g) {
