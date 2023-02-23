@@ -69,6 +69,8 @@ public class Main extends JFrame implements KeyListener{
         System.out.println("てすとだよ");
         System.out.println(Arrays.toString(isKeyPressed));
         player.action();
+
+        
     }
 
     private void draw(Graphics g) {
