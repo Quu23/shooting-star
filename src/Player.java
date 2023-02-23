@@ -15,6 +15,15 @@ public class Player extends Plane{
         this.lv = 1;
         this.exp=0;
     }
+
+    @Override
+    public void action() {
+        if(Main.isKeyPressed[0])this.addBullet();
+        if(Main.isKeyPressed[1]&&this.x>0)this.x--;
+        if(Main.isKeyPressed[2]&&this.y>0)this.y--;
+        if(Main.isKeyPressed[3]&&this.x<400)this.x++;
+        if(Main.isKeyPressed[4]&&this.y<700)this.y++;
+    }
     
     public void levelUp(){
         this.lv++;
@@ -24,10 +33,6 @@ public class Player extends Plane{
         if(this.lv%3==0){
             this.bulletNum+=2;
         }
-    }
-
-    public void attack(Enemy e){
-        e.hp--;//todo:ダメージ量は仮
     }
 
     //自分のhpを回復させるメゾット？
