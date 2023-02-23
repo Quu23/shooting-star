@@ -14,6 +14,7 @@ public abstract class Plane extends Entity{
 
     public abstract void addBullet();
     public abstract void moveBullet();
+    public abstract void action();
 
      @Override
      public boolean equals(Object obj) {
