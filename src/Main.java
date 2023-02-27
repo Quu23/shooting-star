@@ -98,9 +98,24 @@ public class Main extends JFrame implements KeyListener{
         }
         for (Enemy enemy : enemys) {
             enemy.action();
+            if(player.isHit(enemy)){
+                //自分が相手に当たってるか
+
+            }
+            for (Bullet bullet : enemy.bullets) {
+                if(player.isHit(bullet)){
+                    //相手の球が自分に当たってるか
+
+                }
+            }
+            for (Bullet bullet : player.bullets) {
+                if(bullet.isHit(enemy)){
+                    // 自分の球が相手に当たってるか
+
+                }
+            }
         }
 
-        
     }
 
     private void draw(Graphics g) {
