@@ -70,8 +70,27 @@ public class Main extends JFrame implements KeyListener{
         System.out.println("てすとだよ");
         System.out.println(Arrays.toString(isKeyPressed));
         player.action();
+        if(enemys.size()<5){
+            int x = new java.util.Random().nextInt(400);
+            switch (new java.util.Random().nextInt(3)) {
+                case 0:
+                    enemys.add(new StraightEnemy(x, 0, 5, 5));
+                    break;
+                case 1:
+                    enemys.add(new RandomEnemy(x, 0, 7, 7));
+                    break;
 
-        
+                case 2:
+                    enemys.add(new RadialEnemy(x, 0, 10, 10));
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+        for (Enemy enemy : enemys) {
+            enemy.action();
+        }
     }
 
     private void draw(Graphics g) {
