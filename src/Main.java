@@ -32,7 +32,7 @@ public class Main extends JFrame implements KeyListener{
 
     public static void main(String[] args) {
         Main window = new Main("test");
-        player=new Player(200, 600, 5, 5);
+        player=new Player(200, 600, 5 , 5);
         player.hp-=7;
         Timer timer=new Timer(10, new ActionListener(){
 
@@ -70,6 +70,7 @@ public class Main extends JFrame implements KeyListener{
         System.out.println("てすとだよ");
         System.out.println(Arrays.toString(isKeyPressed));
         player.action();
+        
         if(enemys.size()<5){
             int x = new java.util.Random().nextInt(400);
             switch (new java.util.Random().nextInt(3)) {

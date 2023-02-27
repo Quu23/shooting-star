@@ -7,6 +7,8 @@ public class Player extends Plane{
     int lv;
     int exp;
 
+    int bulletCoolTime=0;
+
     //コンストラクタ
     Player(int x,int y,int width,int height){
         super(x,y,width,height,1);
@@ -18,7 +20,11 @@ public class Player extends Plane{
 
     @Override
     public void action() {
-        if(Main.isKeyPressed[0])this.addBullet();
+        this.bulletCoolTime--;
+        if(Main.isKeyPressed[0]&&this.bulletCoolTime<=0){
+            this.addBullet();
+            this.bulletCoolTime=10;
+        }
         if(Main.isKeyPressed[1]&&this.x>0)this.x--;
         if(Main.isKeyPressed[2]&&this.y>0)this.y--;
         if(Main.isKeyPressed[3]&&this.x<400)this.x++;
