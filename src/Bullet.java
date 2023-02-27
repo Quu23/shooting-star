@@ -3,10 +3,12 @@ import java.util.Objects;
 public class Bullet extends Entity{
     //ラジアン
     double angle;
+    int moveSpeed;
 
-    Bullet(int x,int y,int width,int height,double angle){
+    Bullet(int x,int y,int width,int height,double angle,int moveSpeed){
         super(x,y,width,height);
         this.angle=angle;
+        this.moveSpeed=moveSpeed;
     }
 
     @Override

@@ -73,15 +73,22 @@ public class Main extends JFrame implements KeyListener{
         
         if(enemys.size()<5){
             int x = new java.util.Random().nextInt(400);
-            switch (new java.util.Random().nextInt(3)) {
+            switch (new java.util.Random().nextInt(10)) {
                 case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
                     enemys.add(new StraightEnemy(x, 0, 5, 5));
                     break;
-                case 1:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
                     enemys.add(new RandomEnemy(x, 0, 7, 7));
                     break;
 
-                case 2:
+                case 9:
                     enemys.add(new RadialEnemy(x, 0, 10, 10));
                     break;
             
@@ -92,6 +99,8 @@ public class Main extends JFrame implements KeyListener{
         for (Enemy enemy : enemys) {
             enemy.action();
         }
+
+        
     }
 
     private void draw(Graphics g) {

@@ -2,6 +2,7 @@ public abstract class Enemy extends Plane{
     final int MOVE_SPEED=2;
     int hp;
     boolean died = false;
+    int bulletCoolTime=0;
     
 
     Enemy(int x,int y,int width,int height,int power){
@@ -10,10 +11,14 @@ public abstract class Enemy extends Plane{
 
     @Override
     public void action() {
-        this.y++;
+        bulletCoolTime--;
+   
         int r = new java.util.Random().nextInt(5);
-        if(r<2){
+        if(r==0&&bulletCoolTime<=0){
             this.addBullet();
+            bulletCoolTime=20;
+        }else{
+            this.y+=this.MOVE_SPEED;
         }
         this.moveBullet();
     }
@@ -21,8 +26,8 @@ public abstract class Enemy extends Plane{
     @Override
     public void moveBullet() {
         for (Bullet bullet : this.bullets) {
-            bullet.y-=this.MOVE_SPEED*Math.sin(bullet.angle);
-            bullet.x-=this.MOVE_SPEED*Math.cos(bullet.angle);
+            bullet.y-=bullet.moveSpeed*Math.sin(bullet.angle);
+            bullet.x-=bullet.moveSpeed*Math.cos(bullet.angle);
         }
     }
 
