@@ -1,6 +1,7 @@
 public class Player extends Plane{
 
     final int MAX_HP  = 10;
+    final int MOVE_SPEED=3;
     
     int bulletNum;
     int hp;
@@ -23,12 +24,12 @@ public class Player extends Plane{
         this.bulletCoolTime--;
         if(Main.isKeyPressed[0]&&this.bulletCoolTime<=0){
             this.addBullet();
-            this.bulletCoolTime=10;
+            this.bulletCoolTime=20;
         }
-        if(Main.isKeyPressed[1]&&this.x>0)this.x--;
-        if(Main.isKeyPressed[2]&&this.y>0)this.y--;
-        if(Main.isKeyPressed[3]&&this.x<400)this.x++;
-        if(Main.isKeyPressed[4]&&this.y<700)this.y++;
+        if(Main.isKeyPressed[1]&&this.x-this.width>0)this.x-=this.MOVE_SPEED;
+        if(Main.isKeyPressed[2]&&this.y-this.height>0)this.y-=this.MOVE_SPEED;
+        if(Main.isKeyPressed[3]&&this.x-this.width<390)this.x+=this.MOVE_SPEED;
+        if(Main.isKeyPressed[4]&&this.y-this.height<690)this.y+=this.MOVE_SPEED;
         this.moveBullet();
     }
     

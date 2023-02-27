@@ -1,15 +1,17 @@
-public class RadialEnemy extends RandomEnemy{
+public class RadialEnemy extends Enemy{
     
     RadialEnemy(int x,int y,int width,int height){
-        super(x, y, width, height);
+        super(x, y, width, height,1,100);
     }
 
     @Override
     public void addBullet() {
         int bulletNum=new java.util.Random().nextInt(3)+3;
 
+        int intervalDegree=120/(bulletNum-1);
+
         for (int i = 0; i < bulletNum; i++) {
-            super.addBullet();
+            this.bullets.add(new Bullet(this.x,this.y+10,3,3,Math.toRadians(210+intervalDegree*i),this.MOVE_SPEED+2));
         }
     }
 }

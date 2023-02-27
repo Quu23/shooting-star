@@ -1,12 +1,14 @@
 public abstract class Enemy extends Plane{
-    final int MOVE_SPEED=2;
+    final int MOVE_SPEED=1;
+    final int BULLET_COOL_TIME;
     int hp;
     boolean died = false;
     int bulletCoolTime=0;
     
 
-    Enemy(int x,int y,int width,int height,int power){
+    Enemy(int x,int y,int width,int height,int power,int bullet_cool_time){
         super(x,y,width,height,power);
+        this.BULLET_COOL_TIME=bullet_cool_time;
     }
 
     @Override
@@ -14,9 +16,11 @@ public abstract class Enemy extends Plane{
         bulletCoolTime--;
    
         int r = new java.util.Random().nextInt(5);
-        if(r==0&&bulletCoolTime<=0){
-            this.addBullet();
-            bulletCoolTime=20;
+        if(r==0){
+            if(bulletCoolTime<=0){
+                this.addBullet();
+                bulletCoolTime=this.BULLET_COOL_TIME;
+            }
         }else{
             this.y+=this.MOVE_SPEED;
         }
