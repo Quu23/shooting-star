@@ -1,6 +1,6 @@
 public class StraightEnemy extends Enemy{
     StraightEnemy(int x,int y,int width,int height){
-        super(x,y,width,height,1);
+        super(x,y,width,height,1,20);
     }
     
     @Override
