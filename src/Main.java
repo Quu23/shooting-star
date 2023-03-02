@@ -130,9 +130,10 @@ public class Main extends JFrame implements KeyListener{
         g.drawString("hp", 5, 640);
         g.setColor(Color.GRAY);
         g.fillRect(20, 630, 100, 10);
-        g.setColor(Color.RED);
-        g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
-
+        if(player.hp<=0){
+            g.setColor(Color.RED);
+            g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
+        }
         g.setColor(Color.BLUE);
         g.fillRect(player.x-player.width, player.y-player.height, player.width*2, player.height*2);
         for (Bullet bullet : player.bullets) {
