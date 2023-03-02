@@ -97,7 +97,8 @@ public class Main extends JFrame implements KeyListener{
                     break;
             }
         }
-        List<Enemy> enemysDied=new ArrayList<>(); 
+        List<Enemy> enemiesDied=new ArrayList<>();
+        List<Bullet> playerBulletDied = new ArrayList<>(); 
         for (int i=0;i<enemies.size();i++) {
 
             Enemy enemy=enemies.get(i);
@@ -105,23 +106,27 @@ public class Main extends JFrame implements KeyListener{
             enemy.action();
             if(player.isHit(enemy)){
                 //自分が相手に当たってるか
-
+                player.hp=0;
             }
             for (Bullet bullet : enemy.bullets) {
                 if(player.isHit(bullet)){
                     //相手の球が自分に当たってるか
-
+                    player.hp--;
                 }
             }
             for (Bullet bullet : player.bullets) {
                 if(bullet.isHit(enemy)){
                     // 自分の球が相手に当たってるか
-                    enemysDied.add(enemy);
+                    enemiesDied.add(enemy);
+                    playerBulletDied.add(bullet);
                 }
+            }
+            for (Bullet bullet : playerBulletDied) {
+                player.bullets.remove(bullet);
             }
 
         }
-        for (Enemy enemy : enemysDied) {
+        for (Enemy enemy : enemiesDied) {
             enemies.remove(enemy);
         }
 
