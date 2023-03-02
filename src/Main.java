@@ -161,6 +161,8 @@ public class Main extends JFrame implements KeyListener{
                     }
                 }
                 break;
+            case BOSS:
+                break;
             case GAME_OVER:
                 break;
             case CLEAR:
