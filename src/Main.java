@@ -13,7 +13,7 @@ import javax.swing.Timer;
 
 public class Main extends JFrame implements KeyListener{
 
-    static GameMode gameMode = GameMode.START;
+    static GameMode gameMode = GameMode.PLAY;
 
     JPanel canvas;
     /**
