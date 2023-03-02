@@ -27,7 +27,7 @@ public class Main extends JFrame implements KeyListener{
 
     static Player player;
 
-    static List<Enemy> enemies=new ArrayList<>();
+    static List<Enemy> enemys=new ArrayList<>();
 
     static int score=0;
 
@@ -72,7 +72,7 @@ public class Main extends JFrame implements KeyListener{
 
         player.action();
         
-        if(enemies.size()<5){
+        if(enemys.size()<5){
             int x = new java.util.Random().nextInt(400);
             switch (new java.util.Random().nextInt(10)) {
                 case 0:
@@ -80,17 +80,17 @@ public class Main extends JFrame implements KeyListener{
                 case 2:
                 case 3:
                 case 4:
-                    enemies.add(new StraightEnemy(x, 0, 5, 5));
+                    enemys.add(new StraightEnemy(x, 0, 5, 5));
                     break;
                 case 5:
                 case 6:
                 case 7:
                 case 8:
-                    enemies.add(new RandomEnemy(x, 0, 7, 7));
+                    enemys.add(new RandomEnemy(x, 0, 7, 7));
                     break;
 
                 case 9:
-                    enemies.add(new RadialEnemy(x, 0, 10, 10));
+                    enemys.add(new RadialEnemy(x, 0, 10, 10));
                     break;
             
                 default:
@@ -98,9 +98,9 @@ public class Main extends JFrame implements KeyListener{
             }
         }
         List<Enemy> enemysDied=new ArrayList<>(); 
-        for (int i=0;i<enemies.size();i++) {
+        for (int i=0;i<enemys.size();i++) {
 
-            Enemy enemy=enemies.get(i);
+            Enemy enemy=enemys.get(i);
 
             enemy.action();
             if(player.isHit(enemy)){
@@ -122,7 +122,7 @@ public class Main extends JFrame implements KeyListener{
 
         }
         for (Enemy enemy : enemysDied) {
-            enemies.remove(enemy);
+            enemys.remove(enemy);
         }
 
     }
@@ -149,7 +149,7 @@ public class Main extends JFrame implements KeyListener{
                 }
         
                 g.setColor(Color.RED);
-                for (Enemy enemy : enemies) {
+                for (Enemy enemy : enemys) {
                     g.fillRect(enemy.x-enemy.width, enemy.y-enemy.height, enemy.width*2, enemy.height*2);
                     for (Bullet bullet : enemy.bullets) {
                         g.fillOval(bullet.x-bullet.width, bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
