@@ -2,7 +2,7 @@ public abstract class Enemy extends Plane{
     final int MOVE_SPEED=1;
     final int BULLET_COOL_TIME;
     int hp;
-    boolean died = false;
+    boolean isDied = false;
     int bulletCoolTime=0;
     
 

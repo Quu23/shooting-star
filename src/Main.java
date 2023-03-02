@@ -67,8 +67,7 @@ public class Main extends JFrame implements KeyListener{
     private void gameLoop(){
 
         // ゲームループ。ゲームの内容はここに書いてね
-        System.out.println("てすとだよ");
-        System.out.println(Arrays.toString(isKeyPressed));
+
         player.action();
         
         if(enemys.size()<5){
@@ -96,7 +95,11 @@ public class Main extends JFrame implements KeyListener{
                     break;
             }
         }
-        for (Enemy enemy : enemys) {
+        List<Enemy> enemysDied=new ArrayList<>(); 
+        for (int i=0;i<enemys.size();i++) {
+
+            Enemy enemy=enemys.get(i);
+
             enemy.action();
             if(player.isHit(enemy)){
                 //自分が相手に当たってるか
@@ -111,9 +114,13 @@ public class Main extends JFrame implements KeyListener{
             for (Bullet bullet : player.bullets) {
                 if(bullet.isHit(enemy)){
                     // 自分の球が相手に当たってるか
-
+                    enemysDied.add(enemy);
                 }
             }
+
+        }
+        for (Enemy enemy : enemysDied) {
+            enemys.remove(enemy);
         }
 
     }

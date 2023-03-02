@@ -13,11 +13,8 @@ public abstract class Entity {
     // 対象のエンティティと接しているかどうか。
     public boolean isHit(Entity target) {
 
-        double angle = Math.atan2(this.y-target.y, this.x-target.x);
-
         double distance = 
-        Math.sqrt((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y))
-        -((this.width/Math.cos(angle))+(target.width/Math.cos(angle)));
+        Math.sqrt((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y));
 
         if(distance<5){
             return true;
