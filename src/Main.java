@@ -154,7 +154,7 @@ public class Main extends JFrame implements KeyListener{
                 g.drawString("hp", 5, 640);
                 g.setColor(Color.GRAY);
                 g.fillRect(20, 630, 100, 10);
-                if(player.hp<=0){
+                if(player.hp>=0){
                     g.setColor(Color.RED);
                     g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
                 }
