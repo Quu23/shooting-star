@@ -1,7 +1,7 @@
 public class RandomEnemy extends Enemy {
     
     RandomEnemy(int x,int y,int width,int height){
-        super(x,y,width,height,2,20,150);
+        super(x,y,width,height,2,20,150,15);
     }
     @Override
     public void addBullet() {

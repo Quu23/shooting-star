@@ -7,10 +7,11 @@ public abstract class Enemy extends Plane{
     final int SCORE;
     
 
-    Enemy(int x,int y,int width,int height,int power,int bullet_cool_time,int score){
+    Enemy(int x,int y,int width,int height,int power,int bullet_cool_time,int score,int hp){
         super(x,y,width,height,power);
         this.BULLET_COOL_TIME=bullet_cool_time;
         this.SCORE = score;
+        this.hp = hp;
     }
 
     @Override
