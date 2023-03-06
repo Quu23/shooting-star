@@ -34,7 +34,6 @@ public class Main extends JFrame implements KeyListener{
     public static void main(String[] args) {
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
-        player.hp-=7;
         Timer timer=new Timer(10, new ActionListener(){
 
             @Override
@@ -154,7 +153,7 @@ public class Main extends JFrame implements KeyListener{
                 g.drawString("hp", 5, 640);
                 g.setColor(Color.GRAY);
                 g.fillRect(20, 630, 100, 10);
-                if(player.hp<=0){
+                if(player.hp>=0){
                     g.setColor(Color.RED);
                     g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
                 }
