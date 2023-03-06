@@ -34,7 +34,6 @@ public class Main extends JFrame implements KeyListener{
     public static void main(String[] args) {
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
-        player.hp-=7;
         Timer timer=new Timer(10, new ActionListener(){
 
             @Override
