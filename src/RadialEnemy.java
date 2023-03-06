@@ -1,7 +1,7 @@
 public class RadialEnemy extends Enemy{
     
     RadialEnemy(int x,int y,int width,int height){
-        super(x, y, width, height,1,100);
+        super(x, y, width, height,1,50);
     }
 
     @Override
