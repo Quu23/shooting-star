@@ -122,7 +122,7 @@ public class Main extends JFrame implements KeyListener{
                 if(bullet.isHit(enemy)){
                     // 自分の球が相手に当たってるか
                     enemiesDied.add(enemy);
-                    score = enemy.score;
+                    score += enemy.SCORE;
                     playerBulletDied.add(bullet);
                 }
             }
@@ -151,6 +151,7 @@ public class Main extends JFrame implements KeyListener{
                 break;
             case PLAY:
                 g.setColor(Color.BLACK);
+                g.drawString("score:"+Main.score,5,10);
                 g.drawString("hp", 5, 640);
                 g.setColor(Color.GRAY);
                 g.fillRect(20, 630, 100, 10);
