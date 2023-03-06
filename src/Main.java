@@ -122,6 +122,7 @@ public class Main extends JFrame implements KeyListener{
                 if(bullet.isHit(enemy)){
                     // 自分の球が相手に当たってるか
                     enemiesDied.add(enemy);
+                    score = enemy.score;
                     playerBulletDied.add(bullet);
                 }
             }
