@@ -34,6 +34,9 @@ public class Main extends JFrame implements KeyListener{
     public static void main(String[] args) {
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
+        player.levelUp();
+        player.levelUp();
+
         Timer timer=new Timer(10, new ActionListener(){
 
             @Override
@@ -68,6 +71,10 @@ public class Main extends JFrame implements KeyListener{
     private void gameLoop(){
 
         // ゲームループ。ゲームの内容はここに書いてね
+
+        if(score-(250*player.lv*(player.lv-1))>=500*player.lv){
+            player.levelUp();
+        }
 
         player.action();
         

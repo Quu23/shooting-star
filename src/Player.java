@@ -6,7 +6,6 @@ public class Player extends Plane{
     int bulletNum;
     int hp;
     int lv;
-    int exp;
 
     int bulletCoolTime=0;
 
@@ -16,7 +15,6 @@ public class Player extends Plane{
         this.bulletNum=1;
         this.hp = 10;
         this.lv = 1;
-        this.exp=0;
     }
 
     @Override
@@ -35,6 +33,7 @@ public class Player extends Plane{
     
     public void levelUp(){
         this.lv++;
+        this.hp=this.MAX_HP;
         if(this.lv%2==0){
             this.power++;
         }
@@ -43,23 +42,22 @@ public class Player extends Plane{
         }
     }
 
-    //自分のhpを回復させるメゾット？
-    public void heal(boolean isGetHealOrb){
-        if(isGetHealOrb){
-            this.hp++;
-        }
-    }
-
     @Override
     public void addBullet() {
         //一直線のみ
-        this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90),5));
+        //this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90),5));
+        for (int i = 1; i <= (this.bulletNum-1)/2 ; i++) {
+            System.out.println(1);
+            this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90+i*10),5));
+            //this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90-i*10),5));
+        }
     }
 
     @Override
     public void moveBullet() {
         for (Bullet bullet : bullets) {
-            bullet.y-=bullet.moveSpeed;
+            bullet.y-=bullet.moveSpeed*Math.sin(bullet.angle);
+            bullet.x-=bullet.moveSpeed*Math.cos(bullet.angle);
         }
     }
 }
