@@ -17,7 +17,7 @@ public abstract class Entity {
         double distance = 
         Math.sqrt((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y));
 
-        if(distance<5){
+        if(distance<10){
             return true;
         }
         return false;
