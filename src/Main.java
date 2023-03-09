@@ -173,7 +173,13 @@ public class Main extends JFrame implements KeyListener{
             enemies.remove(enemy);
         }
 
-        
+        if(player.hp<=0){
+            gameMode=GameMode.GAME_OVER;
+            enemies.clear();
+            enemiesDied.clear();
+            playerBulletDied.clear();
+            enemyBulletDied.clear();
+        }
 
     }
 
@@ -217,6 +223,12 @@ public class Main extends JFrame implements KeyListener{
             case BOSS:
                 break;
             case GAME_OVER:
+                g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,50));
+                g.setColor(Color.RED);
+                g.drawString("GAME OVER", 53, 200);
+                g.setFont(new Font("游明朝",Font.PLAIN,30));
+                g.setColor(Color.BLACK);
+                g.drawString("PUSH SPACE TO EXIT", 27, 500);
                 break;
             case CLEAR:
                 break;
