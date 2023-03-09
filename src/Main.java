@@ -226,6 +226,9 @@ public class Main extends JFrame implements KeyListener{
                 g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,50));
                 g.setColor(Color.RED);
                 g.drawString("GAME OVER", 53, 200);
+                g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,25));
+                g.drawString("score:"+Main.score,50,300);
+                g.drawString("Lv:"+player.lv,50,360);
                 g.setFont(new Font("游明朝",Font.PLAIN,30));
                 g.setColor(Color.BLACK);
                 g.drawString("PUSH SPACE TO EXIT", 27, 500);
