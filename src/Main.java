@@ -96,7 +96,7 @@ public class Main extends JFrame implements KeyListener{
 
         // ゲームループ。ゲームの内容はここに書いてね
 
-        if(score-(250*player.lv*(player.lv-1))>=500*player.lv){
+        if(score>=250*player.lv*player.lv+250*player.lv){
             player.levelUp();
         }
 
