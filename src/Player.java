@@ -49,8 +49,8 @@ public class Player extends Plane{
         for (int i = 1; i <= (this.bulletNum-1)/2 ; i++) {
             // System.out.println();
             // todo：角度の設定
-            this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90+i*20),5)); 
-            this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90-i*20),5));
+            this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90+i*15),5)); 
+            this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90-i*15),5));
         }
     }
 
@@ -58,7 +58,7 @@ public class Player extends Plane{
     public void moveBullet() {
         for (Bullet bullet : bullets) {
             bullet.y-=bullet.moveSpeed*Math.sin(bullet.angle);
-            bullet.x+=bullet.moveSpeed*Math.cos(bullet.angle);
+            bullet.x-=bullet.moveSpeed*Math.cos(bullet.angle);
         }
     }
 }
