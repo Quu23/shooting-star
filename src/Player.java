@@ -22,7 +22,7 @@ public class Player extends Plane{
         this.bulletCoolTime--;
         if(Main.isKeyPressed[0]&&this.bulletCoolTime<=0){
             this.addBullet();
-            this.bulletCoolTime=50;
+            this.bulletCoolTime=20;
         }
         if(Main.isKeyPressed[1]&&this.x-this.width>0)this.x-=this.MOVE_SPEED;
         if(Main.isKeyPressed[2]&&this.y-this.height>0)this.y-=this.MOVE_SPEED;
