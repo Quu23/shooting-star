@@ -5,7 +5,7 @@ public class Bullet extends Entity{
     double angle;
     double moveSpeed;
 
-    Bullet(int x,int y,int width,int height,double angle,double moveSpeed){
+    Bullet(double x,double y,int width,int height,double angle,double moveSpeed){
         super(x,y,width,height);
         this.angle=angle;
         this.moveSpeed=moveSpeed;

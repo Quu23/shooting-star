@@ -1,9 +1,10 @@
 public abstract class Entity {
 
     // x,yはエンティティの中心の座標　w,hは円で言うところの半径
-    int x,y,width,height;
+    double x,y;
+    int width,height;
 
-    Entity(int x,int y,int width,int height){
+    Entity(double x,double y,int width,int height){
         this.x=x;
         this.y=y;
         this.width=width;

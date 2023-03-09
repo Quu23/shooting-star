@@ -201,16 +201,16 @@ public class Main extends JFrame implements KeyListener{
                     g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
                 }
                 g.setColor(Color.BLUE);
-                g.fillRect(player.x-player.width, player.y-player.height, player.width*2, player.height*2);
+                g.fillRect((int)player.x-player.width, (int)player.y-player.height, player.width*2, player.height*2);
                 for (Bullet bullet : player.bullets) {
-                    g.fillOval(bullet.x-bullet.width, bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
+                    g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
                 }
         
                 g.setColor(Color.RED);
                 for (Enemy enemy : enemies) {
-                    g.fillRect(enemy.x-enemy.width, enemy.y-enemy.height, enemy.width*2, enemy.height*2);
+                    g.fillRect((int)enemy.x-enemy.width, (int)enemy.y-enemy.height, enemy.width*2, enemy.height*2);
                     for (Bullet bullet : enemy.bullets) {
-                        g.fillOval(bullet.x-bullet.width, bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
+                        g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
                     }
                 }
                 break;
