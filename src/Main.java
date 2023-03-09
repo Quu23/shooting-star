@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.text.AbstractDocument.BranchElement;
 
 public class Main extends JFrame implements KeyListener{
 
@@ -43,7 +44,22 @@ public class Main extends JFrame implements KeyListener{
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                window.gameLoop();
+                switch (gameMode) {
+                    case START:
+                        // space ボタン押したらPLAYに移動
+                        break;
+                    case PLAY:
+                        window.gameLoop();
+                        break;
+                    case BOSS:
+                        break;
+                    case CLEAR:
+                    case GAME_OVER:
+                        // SPACE ボタン押したらゲームを終了する
+                        break;
+                    default:
+                        break;
+                }
                 window.canvas.repaint();
             }
             
