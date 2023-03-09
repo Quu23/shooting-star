@@ -47,10 +47,8 @@ public class Player extends Plane{
         //一直線のみ
         this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90),5));
         for (int i = 1; i <= (this.bulletNum-1)/2 ; i++) {
-            // System.out.println((int)(1.5));
-            // System.out.println((int)(-1.5));
             // System.out.println();
-            this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90+i*10),5)); 
+            this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90+i*20),5)); 
             this.bullets.add(new Bullet(this.x,this.y-5,3,3,Math.toRadians(90-i*20),5));
         }
     }

@@ -32,10 +32,12 @@ public class Main extends JFrame implements KeyListener{
     static int score=0;
 
     public static void main(String[] args) {
+
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
-        player.levelUp();
-        player.levelUp();
+        for (int index = 0; index < 9; index++) {
+            player.levelUp();
+        }
 
         Timer timer=new Timer(10, new ActionListener(){
 
