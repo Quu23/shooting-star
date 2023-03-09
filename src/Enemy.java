@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 public abstract class Enemy extends Plane{
     final int MOVE_SPEED=1;
     final int BULLET_COOL_TIME;
@@ -5,13 +7,15 @@ public abstract class Enemy extends Plane{
     boolean isDied = false;
     int bulletCoolTime=0;
     final int SCORE;
+    final Color color;
     
 
-    Enemy(int x,int y,int width,int height,int power,int bullet_cool_time,int score,int hp){
+    Enemy(int x,int y,int width,int height,int power,int bullet_cool_time,int score,int hp,Color color){
         super(x,y,width,height,power);
         this.BULLET_COOL_TIME=bullet_cool_time;
         this.SCORE = score;
         this.hp = hp;
+        this.color = color;
     }
 
     @Override

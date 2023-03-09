@@ -1,7 +1,9 @@
+import java.awt.Color;
+
 public class RadialEnemy extends Enemy{
     
     RadialEnemy(int x,int y,int width,int height){
-        super(x, y, width, height,1,50,300,20);
+        super(x, y, width, height,1,50,300,20,Color.MAGENTA);
     }
 
     @Override

@@ -1,7 +1,9 @@
+import java.awt.Color;
+
 public class RandomEnemy extends Enemy {
     
     RandomEnemy(int x,int y,int width,int height){
-        super(x,y,width,height,2,20,150,15);
+        super(x,y,width,height,2,20,150,15,Color.GREEN);
     }
     @Override
     public void addBullet() {

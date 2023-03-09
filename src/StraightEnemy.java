@@ -1,6 +1,8 @@
+import java.awt.Color;
+
 public class StraightEnemy extends Enemy{
     StraightEnemy(int x,int y,int width,int height){
-        super(x,y,width,height,1,50,100,3);
+        super(x,y,width,height,1,50,100,3,Color.RED);
     }
     
     @Override

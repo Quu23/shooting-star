@@ -212,8 +212,8 @@ public class Main extends JFrame implements KeyListener{
                     g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
                 }
         
-                g.setColor(Color.RED);
                 for (Enemy enemy : enemies) {
+                    g.setColor(enemy.color);
                     g.fillRect((int)enemy.x-enemy.width, (int)enemy.y-enemy.height, enemy.width*2, enemy.height*2);
                     for (Bullet bullet : enemy.bullets) {
                         g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
