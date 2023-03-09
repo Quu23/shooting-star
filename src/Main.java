@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,11 +11,10 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import javax.swing.text.AbstractDocument.BranchElement;
 
 public class Main extends JFrame implements KeyListener{
 
-    static GameMode gameMode = GameMode.PLAY;
+    static GameMode gameMode = GameMode.START;
 
     JPanel canvas;
     /**
@@ -47,6 +47,9 @@ public class Main extends JFrame implements KeyListener{
                 switch (gameMode) {
                     case START:
                         // space ボタン押したらPLAYに移動
+                        if(isKeyPressed[0]){
+                            gameMode=GameMode.PLAY;
+                        }
                         break;
                     case PLAY:
                         window.gameLoop();
@@ -56,6 +59,9 @@ public class Main extends JFrame implements KeyListener{
                     case CLEAR:
                     case GAME_OVER:
                         // SPACE ボタン押したらゲームを終了する
+                        if(isKeyPressed[0]){
+                            System.exit(0);
+                        }
                         break;
                     default:
                         break;
@@ -175,7 +181,13 @@ public class Main extends JFrame implements KeyListener{
 
         switch (gameMode) {
             case START:
-                
+                g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,50));
+                g.setColor(Color.BLUE);
+                g.drawString("SHOOTING", 67, 200);
+                g.drawString("STAR", 125, 270);
+                g.setFont(new Font("游明朝",Font.PLAIN,30));
+                g.setColor(Color.RED);
+                g.drawString("PUSH SPACE TO START", 12, 500);
                 break;
             case PLAY:
                 g.setColor(Color.BLACK);
