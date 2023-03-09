@@ -36,9 +36,9 @@ public class Main extends JFrame implements KeyListener{
 
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
-        for (int index = 0; index < 9; index++) {
-            player.levelUp();
-        }
+        // for (int index = 0; index < 9; index++) {
+        //     player.levelUp();
+        // }
 
         Timer timer=new Timer(10, new ActionListener(){
 
