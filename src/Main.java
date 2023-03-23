@@ -158,7 +158,7 @@ public class Main extends JFrame implements KeyListener{
                 enemy.bullets.remove(bullet);
             }
             for (Bullet bullet : player.bullets) {
-                if(bullet.isHit(enemy)){
+                if(bullet.isHit(enemy)||bullet.y<0){
                     // 自分の球が相手に当たってるか
                     enemy.hp -= player.power;
                     if(enemy.hp<=0){
