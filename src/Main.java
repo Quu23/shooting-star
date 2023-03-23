@@ -153,7 +153,7 @@ public class Main extends JFrame implements KeyListener{
             for (Bullet bullet : enemy.bullets) {
                 if(player.isHit(bullet)){
                     //相手の球が自分に当たってるか
-                    player.hp--;
+                    player.hp-=enemy.power;
                     enemyBulletDied.add(bullet);
                 }
             }
@@ -207,17 +207,44 @@ public class Main extends JFrame implements KeyListener{
 
         for (Bullet bullet : player.bullets) {
             //自分の弾がぼすにあたったときとキャノンに当たった時。
+            if(bullet.isHit(boss)){
+                boss.hp-=player.power;
+                playerBulletDied.add(bullet);
+            }
+            for (Cannon cannon : boss.cannons) {
+                if(bullet.isHit(cannon)){
+                    cannon.hp-=player.power;
+                    playerBulletDied.add(bullet);
+                }
+            }
         }
 
         for (Bullet bullet : boss.bullets) {
-            if(player.isHit(bullet))player.hp--;
+            if(player.isHit(bullet))player.hp-=boss.power;
             bossBulletDied.add(bullet);
         }
 
         for (Cannon cannon : boss.cannons) {    
             for (Bullet bullet : cannon.bullets) {
                 //敵のキャノンが自分に当たった時
+                if(bullet.isHit(player)){
+                    player.hp-=cannon.power;
+                    cannonBulletDied.add(bullet);
+                }
             }
+            for (Bullet bullet : cannonBulletDied) {
+                cannon.bullets.remove(bullet);
+            }
+        }
+
+        
+
+        for (Bullet bullet : bossBulletDied) {
+            boss.bullets.remove(bullet);
+        }
+
+        for (Bullet bullet : playerBulletDied) {
+            player.bullets.remove(bullet);
         }
 
         if(player.hp<=0){
