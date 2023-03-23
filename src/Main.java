@@ -53,8 +53,10 @@ public class Main extends JFrame implements KeyListener{
                         break;
                     case PLAY:
                         window.gameLoop();
+                        if(player.lv==15)gameMode=GameMode.BOSS;
                         break;
                     case BOSS:
+                        boss_loop();
                         break;
                     case CLEAR:
                     case GAME_OVER:
@@ -180,6 +182,10 @@ public class Main extends JFrame implements KeyListener{
             playerBulletDied.clear();
             enemyBulletDied.clear();
         }
+
+    }
+
+    private static void boss_loop(){
 
     }
 
