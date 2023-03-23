@@ -11,6 +11,7 @@ public class Cannon extends StraightEnemy{
             this.addBullet();
             this.bulletCoolTime=this.BULLET_COOL_TIME;
         }
+        this.moveBullet();
     }
     
 }

@@ -28,6 +28,8 @@ public class Main extends JFrame implements KeyListener{
 
     static Player player;
 
+    static Boss boss;
+
     static List<Enemy> enemies=new ArrayList<>();
 
     static int score=0;
@@ -36,6 +38,7 @@ public class Main extends JFrame implements KeyListener{
 
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
+        boss=new Boss(200,100);
         for (int index = 0; index < 11; index++) {
            player.levelUp();
         }
@@ -192,7 +195,35 @@ public class Main extends JFrame implements KeyListener{
     }
 
     private static void boss_loop(){
+        List<Bullet> playerBulletDied = new ArrayList<>(); 
+        List<Bullet> bossBulletDied = new ArrayList<>();
+        List<Bullet> cannonBulletDied = new ArrayList<>();
+
         player.action();
+
+        boss.action();
+
+        if(player.isHit(boss))player.hp=0;
+
+        for (Bullet bullet : player.bullets) {
+            //自分の弾がぼすにあたったときとキャノンに当たった時。
+        }
+
+        for (Bullet bullet : boss.bullets) {
+            if(player.isHit(bullet))player.hp--;
+            bossBulletDied.add(bullet);
+        }
+
+        for (Cannon cannon : boss.cannons) {    
+            for (Bullet bullet : cannon.bullets) {
+                //敵のキャノンが自分に当たった時
+            }
+        }
+
+        if(player.hp<=0){
+            gameMode=GameMode.GAME_OVER;
+            enemies.clear();
+        }
     }
 
     private void draw(Graphics g) {

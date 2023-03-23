@@ -11,6 +11,23 @@ public class Boss extends Enemy{
     }
 
     @Override
+    public void action() {
+        if(bulletCoolTime<=0){
+            this.addBullet();
+            bulletCoolTime=this.BULLET_COOL_TIME;
+        }
+        for (Cannon cannon : cannons) {
+            cannon.action();
+        }
+        this.moveBullet();
+    }
+
+    @Override
+    public boolean isHit(Entity target) {
+        return super.isHit(target)||(/*playerが本体に当たっているか。*/false);
+    }
+
+    @Override
     public void addBullet() {
         int intervalDegree=20;
 
