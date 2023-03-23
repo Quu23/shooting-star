@@ -53,7 +53,7 @@ public class Main extends JFrame implements KeyListener{
                         break;
                     case PLAY:
                         window.gameLoop();
-                        if(player.lv==15)gameMode=GameMode.BOSS;
+                        if(player.lv==12)gameMode=GameMode.BOSS;
                         break;
                     case BOSS:
                         boss_loop();
