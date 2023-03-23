@@ -32,7 +32,7 @@ public class Player extends Plane{
     }
     
     public void levelUp(){
-        this.lv++;
+        this.lv+=1;
         this.hp=this.MAX_HP;
         if(this.lv%2==0){
             this.power++;

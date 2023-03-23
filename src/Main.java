@@ -36,9 +36,9 @@ public class Main extends JFrame implements KeyListener{
 
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
-        // for (int index = 0; index < 9; index++) {
-        //     player.levelUp();
-        // }
+        for (int index = 0; index < 11; index++) {
+           player.levelUp();
+        }
 
         Timer timer=new Timer(10, new ActionListener(){
 
@@ -53,7 +53,13 @@ public class Main extends JFrame implements KeyListener{
                         break;
                     case PLAY:
                         window.gameLoop();
-                        if(player.lv==12)gameMode=GameMode.BOSS;
+                        if(player.lv==12){
+                            gameMode=GameMode.BOSS;
+                            enemies.clear();
+                            player.bullets.clear();
+                            player.x=200;
+                            player.y=600;
+                        }
                         break;
                     case BOSS:
                         boss_loop();
@@ -186,7 +192,7 @@ public class Main extends JFrame implements KeyListener{
     }
 
     private static void boss_loop(){
-
+        player.action();
     }
 
     private void draw(Graphics g) {
@@ -203,7 +209,7 @@ public class Main extends JFrame implements KeyListener{
                 break;
             case PLAY:
                 g.setColor(Color.BLACK);
-                g.drawString("score:"+Main.score,5,10);
+                g.drawString("score:"+Main.score+"/"+(250*player.lv*player.lv+250*player.lv),5,10);
                 g.drawString("Lv:"+player.lv,5,655);
                 g.drawString("hp", 5, 640);
                 g.setColor(Color.GRAY);
@@ -227,6 +233,21 @@ public class Main extends JFrame implements KeyListener{
                 }
                 break;
             case BOSS:
+                g.setColor(Color.BLACK);
+                g.drawString("score:"+Main.score+"/"+(250*player.lv*player.lv+250*player.lv),5,10);
+                g.drawString("Lv:"+player.lv,5,655);
+                g.drawString("hp", 5, 640);
+                g.setColor(Color.GRAY);
+                g.fillRect(20, 630, 100, 10);
+                if(player.hp>=0){
+                    g.setColor(Color.RED);
+                    g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
+                }
+                g.setColor(Color.BLUE);
+                g.fillRect((int)player.x-player.width, (int)player.y-player.height, player.width*2, player.height*2);
+                for (Bullet bullet : player.bullets) {
+                    g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
+                }        
                 break;
             case GAME_OVER:
                 g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,50));
