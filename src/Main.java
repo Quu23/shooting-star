@@ -14,7 +14,7 @@ import javax.swing.Timer;
 
 public class Main extends JFrame implements KeyListener{
 
-    static GameMode gameMode = GameMode.START;
+    static GameMode gameMode = GameMode.BOSS;
 
     JPanel canvas;
     /**
@@ -98,6 +98,7 @@ public class Main extends JFrame implements KeyListener{
                 draw(g);
             }
         };
+        canvas.setBackground(Color.WHITE);
         this.add(canvas);
         this.setVisible(true);
     }
@@ -301,11 +302,32 @@ public class Main extends JFrame implements KeyListener{
                     g.setColor(Color.RED);
                     g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
                 }
+                    
+                g.setColor(Color.BLACK);
+                g.fillRect(25, 50, 340, 100);
+                g.fillRect(115, 20, 150, 160);
+                g.setColor(Color.WHITE);
+                g.fillRect(140, 60, 100, 120);
+                g.setColor(Color.RED);
+                g.fillOval((int)boss.x-boss.width, (int)boss.y-boss.height, boss.width*2, boss.height*2);
+                for (Cannon c : boss.cannons) {
+                    g.setColor(Color.GRAY);
+                    g.fillRect((int)c.x-c.width, (int)c.y-c.height, c.width*2, c.height*2);
+                    g.setColor(Color.BLACK);
+                    for (Bullet bullet : c.bullets) {
+                        g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);
+                    }
+                }
+                g.setColor(Color.BLACK);
+                for (Bullet bullet : boss.bullets) {
+                    g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);
+                }
+
                 g.setColor(Color.BLUE);
                 g.fillRect((int)player.x-player.width, (int)player.y-player.height, player.width*2, player.height*2);
                 for (Bullet bullet : player.bullets) {
-                    g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);;
-                }        
+                    g.fillOval((int)bullet.x-bullet.width, (int)bullet.y-bullet.height, bullet.width*2, bullet.height*2);
+                }
                 break;
             case GAME_OVER:
                 g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,50));
