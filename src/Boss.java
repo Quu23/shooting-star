@@ -36,6 +36,9 @@ public class Boss extends Enemy{
     public void move() {
         this.direction*=(this.x>260||this.x<140)?-1:1;
         this.x+=direction*2;
+        for (Cannon c : this.cannons) {
+            c.x+=direction*2;
+        }
     }
 
     @Override
