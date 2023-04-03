@@ -1,4 +1,6 @@
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Boss extends Enemy{
 
@@ -7,10 +9,15 @@ public class Boss extends Enemy{
     int degreeCount=0;
     int direction=1;
 
-    Cannon cannons[] = {new Cannon(this.x-140,this.y+50),new Cannon(this.x-105,this.y+50),new Cannon(this.x+105,this.y+50),new Cannon(this.x+140,this.y+50)};
+    List<Cannon> cannons = new ArrayList<>();
 
     Boss(int x,int y) {
         super(x, y, 25, 25, 1,5, 1000000, 1000, Color.red);
+        cannons.add(new Cannon(this.x-140,this.y+50));
+        cannons.add(new Cannon(this.x-105,this.y+50));
+        cannons.add(new Cannon(this.x+105,this.y+50));
+        cannons.add(new Cannon(this.x+140,this.y+50));
+
     }
 
     @Override

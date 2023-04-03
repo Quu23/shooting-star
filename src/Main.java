@@ -204,6 +204,8 @@ public class Main extends JFrame implements KeyListener{
         List<Bullet> bossBulletDied = new ArrayList<>();
         List<Bullet> cannonBulletDied = new ArrayList<>();
 
+        List<Cannon> cannonDied = new ArrayList<>();
+
         player.action();
 
         boss.action();
@@ -247,9 +249,10 @@ public class Main extends JFrame implements KeyListener{
             for (Bullet bullet : cannonBulletDied) {
                 cannon.bullets.remove(bullet);
             }
+            if(cannon.hp<0)cannonDied.add(cannon);
         }
 
-        
+
 
         for (Bullet bullet : bossBulletDied) {
             boss.bullets.remove(bullet);
@@ -257,6 +260,9 @@ public class Main extends JFrame implements KeyListener{
 
         for (Bullet bullet : playerBulletDied) {
             player.bullets.remove(bullet);
+        }
+        for (Cannon c : cannonDied) {
+            boss.cannons.remove(c);
         }
 
         if(player.hp<=0){
