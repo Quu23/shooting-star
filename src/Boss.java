@@ -27,7 +27,6 @@ public class Boss extends Enemy{
 
     @Override
     public boolean isHit(Entity target) {
-        System.out.println((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y));
         if((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y)<this.width*this.width)return true;
         return false;
     }
