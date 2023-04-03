@@ -308,10 +308,10 @@ public class Main extends JFrame implements KeyListener{
                 g.fillRect(115, 20, 150, 160);
                 g.setColor(Color.WHITE);
                 g.fillRect(140, 60, 100, 120);
-                g.setColor(Color.RED);
+                g.setColor(boss.color);
                 g.fillOval((int)boss.x-boss.width, (int)boss.y-boss.height, boss.width*2, boss.height*2);
                 for (Cannon c : boss.cannons) {
-                    g.setColor(Color.GRAY);
+                    g.setColor(c.color);
                     g.fillRect((int)c.x-c.width, (int)c.y-c.height, c.width*2, c.height*2);
                     g.setColor(Color.BLACK);
                     for (Bullet bullet : c.bullets) {
