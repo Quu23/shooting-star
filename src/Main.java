@@ -119,7 +119,7 @@ public class Main extends JFrame implements KeyListener{
         
         if(enemies.size()<5){
             int x = new java.util.Random().nextInt(400);
-            switch (new java.util.Random().nextInt(10)) {
+            switch (new java.util.Random().nextInt(11)) {
                 case 0:
                 case 1:
                 case 2:
@@ -137,8 +137,8 @@ public class Main extends JFrame implements KeyListener{
                 case 9:
                     enemies.add(new RadialEnemy(x, 0, 10, 10));
                     break;
-            
                 default:
+                    if(Math.random()>0.9)enemies.add(new GoldEnemy(x, 0));
                     break;
             }
         }
