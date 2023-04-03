@@ -6,8 +6,8 @@ public abstract class Enemy extends Plane{
     int hp;
     boolean isDied = false;
     int bulletCoolTime=0;
+    Color color;
     final int SCORE;
-    final Color color;
     
 
     Enemy(int x,int y,int width,int height,int power,int bullet_cool_time,int score,int hp,Color color){
