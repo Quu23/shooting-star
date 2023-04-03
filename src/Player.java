@@ -25,9 +25,9 @@ public class Player extends Plane{
             this.bulletCoolTime=20;
         }
         if(Main.isKeyPressed[1]&&this.x-this.width>0)this.x-=this.MOVE_SPEED;
-        if(Main.isKeyPressed[2]&&this.y-this.height>0)this.y-=this.MOVE_SPEED;
-        if(Main.isKeyPressed[3]&&this.x-this.width<390)this.x+=this.MOVE_SPEED;
-        if(Main.isKeyPressed[4]&&this.y-this.height<690)this.y+=this.MOVE_SPEED;
+        if(Main.isKeyPressed[2]&&this.y-this.height>0&&!(Main.gameMode==GameMode.BOSS&&this.y<185))this.y-=this.MOVE_SPEED;
+        if(Main.isKeyPressed[3]&&this.x-this.width<375)this.x+=this.MOVE_SPEED;
+        if(Main.isKeyPressed[4]&&this.y-this.height<655)this.y+=this.MOVE_SPEED;
         this.moveBullet();
     }
     
