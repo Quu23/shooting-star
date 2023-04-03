@@ -5,6 +5,7 @@ public class Boss extends Enemy{
     final int MAX_HP  = 1000;
 
     int degreeCount=0;
+    int direction=1;
 
     Cannon cannons[] = {new Cannon(this.x-140,this.y+50),new Cannon(this.x-105,this.y+50),new Cannon(this.x+105,this.y+50),new Cannon(this.x+140,this.y+50)};
 
@@ -14,6 +15,7 @@ public class Boss extends Enemy{
 
     @Override
     public void action() {
+        this.move();
         if(bulletCoolTime<=0){
             this.addBullet();
             bulletCoolTime=this.BULLET_COOL_TIME;
@@ -29,6 +31,11 @@ public class Boss extends Enemy{
     public boolean isHit(Entity target) {
         if((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y)<this.width*this.width)return true;
         return false;
+    }
+
+    public void move() {
+        this.direction*=(this.x>260||this.x<140)?-1:1;
+        this.x+=direction*2;
     }
 
     @Override
