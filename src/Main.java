@@ -14,7 +14,7 @@ import javax.swing.Timer;
 
 public class Main extends JFrame implements KeyListener{
 
-    static GameMode gameMode = GameMode.BOSS;
+    static GameMode gameMode = GameMode.START;
 
     JPanel canvas;
     /**
@@ -36,12 +36,12 @@ public class Main extends JFrame implements KeyListener{
 
     public static void main(String[] args) {
 
-        Main window = new Main("test");
+        Main window = new Main("shooting star");
         player=new Player(200, 600, 5 , 5);
         boss=new Boss(190,100);
-        for (int index = 0; index < 15; index++) {
-           player.levelUp();
-        }
+        // for (int index = 0; index < 15; index++) {
+        //    player.levelUp();
+        // }
 
         Timer timer=new Timer(10, new ActionListener(){
 
