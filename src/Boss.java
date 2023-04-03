@@ -7,7 +7,7 @@ public class Boss extends Enemy{
     Cannon cannons[] = {new Cannon(this.x-140,this.y+50),new Cannon(this.x-105,this.y+50),new Cannon(this.x+105,this.y+50),new Cannon(this.x+140,this.y+50)};
 
     Boss(int x,int y) {
-        super(x, y, 5, 5, 3,5, 1000000, 1000, Color.red);
+        super(x, y, 25, 25, 1,5, 1000000, 1000, Color.red);
     }
 
     @Override
@@ -21,6 +21,13 @@ public class Boss extends Enemy{
         }
         this.moveBullet();
         bulletCoolTime--;
+    }
+
+    @Override
+    public boolean isHit(Entity target) {
+        System.out.println((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y));
+        if((this.x-target.x)*(this.x-target.x)+(this.y-target.y)*(this.y-target.y)<this.width*this.width)return true;
+        return false;
     }
 
     @Override
