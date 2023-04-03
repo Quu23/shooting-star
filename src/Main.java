@@ -119,6 +119,7 @@ public class Main extends JFrame implements KeyListener{
         
         if(enemies.size()<5){
             int x = new java.util.Random().nextInt(400);
+            // enemies.add(new GoldEnemy(x, 0));
             switch (new java.util.Random().nextInt(11)) {
                 case 0:
                 case 1:
@@ -366,6 +367,15 @@ public class Main extends JFrame implements KeyListener{
                 g.drawString("PUSH SPACE TO EXIT", 27, 500);
                 break;
             case CLEAR:
+                g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,50));
+                g.setColor(Color.GREEN);
+                g.drawString("GAME CLEAR", 53, 200);
+                g.setFont(new Font("ＭＳ Ｐゴシック",Font.PLAIN,25));
+                g.drawString("score:"+Main.score,50,300);
+                g.drawString("Lv:"+player.lv,50,360);
+                g.setFont(new Font("游明朝",Font.PLAIN,30));
+                g.setColor(Color.BLACK);
+                g.drawString("PUSH SPACE TO EXIT", 27, 500);
                 break;
         }
     }
