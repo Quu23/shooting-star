@@ -66,6 +66,9 @@ public class Main extends JFrame implements KeyListener{
                         break;
                     case BOSS:
                         boss_loop();
+                        if(boss.hp<=0){
+                            gameMode=GameMode.CLEAR;
+                        }
                         break;
                     case CLEAR:
                     case GAME_OVER:
@@ -320,10 +323,10 @@ public class Main extends JFrame implements KeyListener{
                     g.fillRect(260, 0, 100*boss.hp/boss.MAX_HP, 10);
                 }
                 g.setColor(Color.BLACK);
-                g.fillRect(25, 50, 330, 100);
-                g.fillRect(115, 20, 150, 160);
+                g.fillRect((int)boss.x-165, 50, 330, 100);
+                g.fillRect((int)boss.x-75, 20, 150, 160);
                 g.setColor(Color.WHITE);
-                g.fillRect(140, 60, 100, 120);
+                g.fillRect((int)boss.x-50, 60, 100, 120);
                 g.setColor(boss.color);
                 g.fillOval((int)boss.x-boss.width, (int)boss.y-boss.height, boss.width*2, boss.height*2);
                 for (Cannon c : boss.cannons) {
