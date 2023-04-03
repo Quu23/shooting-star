@@ -125,7 +125,7 @@ public class Main extends JFrame implements KeyListener{
         
         if(enemies.size()<5){
             int x = new java.util.Random().nextInt(400);
-            enemies.add(new GoldEnemy(x, 0));
+            //enemies.add(new GoldEnemy(x, 0));
             switch (new java.util.Random().nextInt(11)) {
                 case 0:
                 case 1:
