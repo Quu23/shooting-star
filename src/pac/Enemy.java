@@ -1,3 +1,4 @@
+package pac;
 import java.awt.Color;
 
 public abstract class Enemy extends Plane{

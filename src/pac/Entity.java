@@ -1,3 +1,4 @@
+package pac;
 public abstract class Entity {
 
     // x,yはエンティティの中心の座標　w,hは円で言うところの半径

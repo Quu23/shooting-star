@@ -1,3 +1,4 @@
+package pac;
 public class Player extends Plane{
 
     final int MAX_HP  = 10;

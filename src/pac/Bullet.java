@@ -1,3 +1,4 @@
+package pac;
 import java.util.Objects;
 
 public class Bullet extends Entity{

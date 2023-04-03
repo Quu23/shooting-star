@@ -1,3 +1,4 @@
+package pac;
 public enum GameMode {
     START,
     PLAY,
