@@ -203,6 +203,10 @@ public class Main extends JFrame implements KeyListener{
 
         boss.action();
 
+        for(Cannon c:boss.cannons){
+            c.action();
+        }
+
         if(player.isHit(boss))player.hp=0;
 
         for (Bullet bullet : player.bullets) {
@@ -226,7 +230,7 @@ public class Main extends JFrame implements KeyListener{
 
         for (Cannon cannon : boss.cannons) {    
             for (Bullet bullet : cannon.bullets) {
-                //敵のキャノンが自分に当たった時
+                //敵のキャノンの弾が自分に当たった時
                 if(bullet.isHit(player)){
                     player.hp-=cannon.power;
                     cannonBulletDied.add(bullet);
