@@ -38,7 +38,7 @@ public class Main extends JFrame implements KeyListener{
 
         Main window = new Main("test");
         player=new Player(200, 600, 5 , 5);
-        boss=new Boss(200,100);
+        boss=new Boss(190,100);
         for (int index = 0; index < 11; index++) {
            player.levelUp();
         }
@@ -304,7 +304,7 @@ public class Main extends JFrame implements KeyListener{
                 }
                     
                 g.setColor(Color.BLACK);
-                g.fillRect(25, 50, 340, 100);
+                g.fillRect(25, 50, 330, 100);
                 g.fillRect(115, 20, 150, 160);
                 g.setColor(Color.WHITE);
                 g.fillRect(140, 60, 100, 120);
