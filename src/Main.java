@@ -302,7 +302,15 @@ public class Main extends JFrame implements KeyListener{
                     g.setColor(Color.RED);
                     g.fillRect(20, 630, 100*player.hp/player.MAX_HP, 10);
                 }
-                    
+                   
+                g.setColor(Color.BLACK);
+                g.drawString("BOSS hp", 205, 10);
+                g.setColor(Color.GRAY);
+                g.fillRect(260, 0, 100, 10);
+                if(boss.hp>=0){
+                    g.setColor(Color.RED);
+                    g.fillRect(260, 0, 100*boss.hp/boss.MAX_HP, 10);
+                }
                 g.setColor(Color.BLACK);
                 g.fillRect(25, 50, 330, 100);
                 g.fillRect(115, 20, 150, 160);

@@ -2,6 +2,8 @@ import java.awt.Color;
 
 public class Boss extends Enemy{
 
+    final int MAX_HP  = 1000;
+
     int degreeCount=0;
 
     Cannon cannons[] = {new Cannon(this.x-140,this.y+50),new Cannon(this.x-105,this.y+50),new Cannon(this.x+105,this.y+50),new Cannon(this.x+140,this.y+50)};
