@@ -203,10 +203,6 @@ public class Main extends JFrame implements KeyListener{
 
         boss.action();
 
-        for(Cannon c:boss.cannons){
-            c.action();
-        }
-
         if(player.isHit(boss))player.hp=0;
 
         for (Bullet bullet : player.bullets) {
