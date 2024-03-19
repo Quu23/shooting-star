@@ -1,6 +1,6 @@
 ## Welcome to here!
 
-In this repository,we develop shooting game !
+In this repository,we developed shooting game !
 
 This license is public domain.
 
